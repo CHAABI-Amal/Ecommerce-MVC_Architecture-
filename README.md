@@ -44,7 +44,7 @@ L'utilisateur peut ajouter ou supprimer des produits du panier et ajuster la qua
 ![img4](https://github.com/user-attachments/assets/631db0c1-0640-45ef-9633-31a386a0c956)
 
 #### **Panier avec Plusieurs Produits**
-![Uploading img6.png…]()
+![img6](https://github.com/user-attachments/assets/613be117-e8e2-4a80-a26b-9149c26147a6)
 
 ---
 
