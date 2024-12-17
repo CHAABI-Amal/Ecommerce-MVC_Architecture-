@@ -1,0 +1,98 @@
+﻿@model List<MyShop.Models.Bicycle>
+
+@{
+    ViewBag.Title = "Bicycle List";
+}
+<!-- Slider en Pleine Largeur -->
+<div class="slider-container">
+    <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+    <div class="slider">
+        <div class="slide">
+            <img src="~/Images/im1.png" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="~/Images/im2.png" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="~/Images/im4.png" alt="Slide 3">
+        </div>
+    </div>
+    <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Trending Now</h1>
+
+    <!-- Sidebar with brand links -->
+    <div class="row">
+        <div class="col-md-2">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a asp-controller="Bicycle" asp-action="List" asp-route-brand="trek" class="nav-link">Trek</a>
+                </li>
+                <li class="list-group-item">
+                    <a asp-controller="Bicycle" asp-action="List" asp-route-brand="specialized" class="nav-link">Specialized</a>
+                </li>
+                <li class="list-group-item">
+                    <a asp-controller="Bicycle" asp-action="List" asp-route-brand="cannondale" class="nav-link">Cannondale</a>
+                </li>
+                <li class="list-group-item">
+                    <a asp-controller="Bicycle" asp-action="List" asp-route-brand="giant" class="nav-link">Giant</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Bicycle Cards -->
+        <div class="col-md-10">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
+                @foreach (var item in Model)
+
+
+
+                {
+                    <div class="col">
+                        <div class="card border-0 shadow-sm h-100 position-relative">
+
+                            <!-- Image -->
+                            <img src="@item.ImageFileName" class="card-img-top p-2" alt="@item.Brand @item.Model" style="height: 180px; object-fit: contain;">
+
+                            <!-- Card Body -->
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">@item.Brand @item.Model</h5>
+
+                                <p class="text-danger fw-bold">@item.Price?.ToString("C")</p>
+                            </div>
+
+                            <!-- Reviews -->
+                            <div class="mb-2 text-center">
+                                <span class="text-warning">
+                                    &#9733;&#9733;&#9733;&#9733;&#9733; <!-- Static 5-star example -->
+                                </span>
+                            </div>
+
+                            <!-- Details Button -->
+                            <div class="text-center mb-3">
+                                <a href="@Url.Action("Details", "Bicycle", new { id = item.Id, slug = item.Slug })" class="btn btn-primary btn-sm px-4">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function updateSlider() {
+        document.querySelector('.slider').style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function moveSlide(step) {
+        currentIndex = (currentIndex + step + slides.length) % slides.length;
+        updateSlider();
+    }
+
+    setInterval(() => moveSlide(1), 3000);
+</script>

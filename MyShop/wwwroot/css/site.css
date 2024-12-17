@@ -1,0 +1,152 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* Slider Container */
+.slider-container {
+    position: relative;
+    max-width: 900px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+    .slide img {
+        width: 100%;
+        height: auto;
+    }
+
+/* Navigation Buttons */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+    .slider-btn.prev {
+        left: 10px;
+    }
+
+    .slider-btn.next {
+        right: 10px;
+    }
+
+    .slider-btn:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+/* Pagination Dots */
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+    .dot.active {
+        background-color: #007bff;
+    }
+/* Container */
+.container {
+    max-width: 1200px;
+}
+
+/* Badge Labels */
+.badge {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 0;
+}
+
+/* Cards */
+.card {
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+.card-img-top {
+    border-radius: 10px;
+}
+
+/* Prices */
+.text-danger {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.text-muted {
+    font-size: 0.9rem;
+}
+
+/* Reviews */
+.text-warning {
+    font-size: 0.9rem;
+}
+
+.text-muted.small {
+    font-size: 0.8rem;
+}
+
+/* Details Button */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
